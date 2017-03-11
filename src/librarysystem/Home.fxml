@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="541.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="759.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#newBorrow" text="Add New Books" />
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane layoutX="169.0" layoutY="82.0" prefHeight="459.0" prefWidth="659.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="169.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="82.0">
+         <children>
+            <TableView fx:id="tblBooks" prefHeight="541.0" prefWidth="759.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="no" prefWidth="38.0" text="No" />
+                  <TableColumn fx:id="id" prefWidth="74.0" text="Id" />
+                <TableColumn fx:id="tittle" prefWidth="94.0" text="Tittle" />
+                  <TableColumn fx:id="publisher" prefWidth="75.0" text="Publisher" />
+                  <TableColumn fx:id="writer" prefWidth="75.0" text="Writer" />
+                  <TableColumn fx:id="year" prefWidth="75.0" text="Year" />
+                  <TableColumn fx:id="qty" prefWidth="75.0" text="Quantity" />
+                  <TableColumn fx:id="status" prefWidth="75.0" text="Stock Status" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <HBox alignment="CENTER" layoutX="204.0" layoutY="37.0" spacing="20.0">
+         <children>
+            <Label layoutX="183.0" layoutY="42.0" text="Find Book By" />
+            <ComboBox fx:id="comboSearchBy" layoutX="262.0" layoutY="38.0" onAction="#SearchBy" prefWidth="150.0" promptText="--Find By--" />
+            <TextField fx:id="fSearchby" layoutX="429.0" layoutY="38.0" />
+            <Button layoutX="599.0" layoutY="38.0" mnemonicParsing="false" onAction="#SearcAction" text="Search" />
+         </children>
+      </HBox>
+      <AnchorPane layoutY="26.0" prefHeight="515.0" prefWidth="169.0" style="-fx-background-color: #0086b3;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="26.0">
+         <children>
+            <Button layoutX="50.0" layoutY="96.0" mnemonicParsing="false" onAction="#BookList" text="Book Lists" />
+            <Button disable="true" layoutX="52.0" layoutY="134.0" mnemonicParsing="false" text="Borrower" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="725.0" layoutY="37.0" mnemonicParsing="false" onAction="#RefreshTable" text="Refresh Table" AnchorPane.rightAnchor="15.0" />
+   </children>
+</AnchorPane>
